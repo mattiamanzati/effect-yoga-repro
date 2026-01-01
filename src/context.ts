@@ -18,7 +18,8 @@ export class AccessTokenBasedServices extends LayerMap.Service<AccessTokenBasedS
 				accessToken: accessToken || ""
 			})
 		),
-		Layer.provideMerge(Layer.succeed(RequestContext, { accessToken: accessToken || "" }))
+		Layer.provideMerge(Layer.succeed(RequestContext, { accessToken: accessToken || "" })),
+		Layer.fresh
 	)
 }){}
 
